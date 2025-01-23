@@ -1,4 +1,5 @@
-package cwlib.types.data;
+namespace cswlib.src.main.data
+{
 
 import cwlib.enums.Branch;
 
@@ -143,7 +144,6 @@ public readonly class Revision
     }
 
 
-    @Override
     public String toString()
     {
         if (this.branchID != 0)
@@ -154,7 +154,6 @@ public readonly class Revision
         return String.format("Revision: (r%d)", this.head);
     }
 
-    @Override
     public bool equals(Object other)
     {
         if (other == this) return true;
@@ -163,4 +162,5 @@ public readonly class Revision
                && otherRevision.branchID == this.branchID
                && otherRevision.branchRevision == this.branchRevision;
     }
+}
 }
