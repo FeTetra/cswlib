@@ -16,8 +16,7 @@ Much like this project was for us to make, you will learn how the serialization 
 Simply put, if you have more experience in C#, you'll understand how LBP works more than what you can gain out of Toolkit alone.
 
 #### C# Code written by
-: DiSKO
-: FeTetra
+DiSKO : FeTetra : Ritchie : Torutheredfox
 
 Original library by ennuo:
 https://github.com/ennuo/toolkit/tree/main/lib/cwlib
