@@ -15,7 +15,7 @@ Much like this project was for us to make, you will learn how the serialization 
 ### Understanding the LBP File Data to a T
 Simply put, if you have more experience in C#, you'll understand how LBP works more than what you can gain out of Toolkit alone.
 
-C# Code written by
+#### C# Code written by
 : DiSKO
 : FeTetra
 
