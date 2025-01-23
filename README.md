@@ -18,6 +18,6 @@ Simply put, if you have more experience in C#, you'll understand how LBP works m
 #### C# Code written by
 DiSKO : FeTetra : Ritchie : Torutheredfox
 
-Original library by ennuo:
+#### Original library by ennuo:
 https://github.com/ennuo/toolkit/tree/main/lib/cwlib
 
