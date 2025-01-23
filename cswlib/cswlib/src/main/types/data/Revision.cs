@@ -1,12 +1,13 @@
+// Revision.cs
+
+using cswlib.src.main.enums;
 namespace cswlib.src.main.data
 {
-
-import cwlib.enums.Branch;
 
 /**
  * Utilities for comparing game revisions.
  */
-public readonly class Revision
+public class Revision
 {
     public static readonly int LBP1_readonly_REVISION = 0x272;
 
@@ -23,8 +24,8 @@ public readonly class Revision
     public Revision(int revision, int branchDescription)
     {
         this.head = revision;
-        this.branchID = (short) (ref branchDescription >> 0x10);
-        this.branchRevision = (short) (ref branchDescription & 0xFFFF);
+        this.branchID = (short) (branchDescription >> 0x10);
+        this.branchRevision = (short) (branchDescription & 0xFFFF);
     }
 
     /**
@@ -92,7 +93,7 @@ public readonly class Revision
 
     public bool has(Branch branch, int revision)
     {
-        if (!this.is(branch)) return false;
+        if (!this.instanceof(branch)) return false;
         return this.branchRevision >= revision;
     }
 

@@ -1,64 +1,24 @@
+using System.Runtime.ConstrainedExecution;
+
 namespace cswlib.src.main.enums
 {
 
-public enum Branch
-{
-    /**
-     * Dummy branch.
-     */
-    NONE(0x0, 0x0, 0x0),
-
-    /**
-     * Branched revision for Leerdammer update in LittleBigPlanet 1.
-     * Tag: LD
-     */
-    LEERDAMMER(Revisions.LD_HEAD, 0x4c44, Revisions.LD_MAX),
-
-    /**
-     * LittleBigPlanet Vita branched revision, Vita is weird,
-     * the final branch revision is 0x3e2, but it can go as early
-     * as 0x3c1 in earlier branch revisions.
-     * Tag: D1
-     */
-    DOUBLE11(Revisions.D1_HEAD, 0x4431, Revisions.D1_MAX),
-
-    /**
-     * Custom branched revision for Toolkit custom resources.
-     * Tag: MZ
-     */
-    MIZUKI(Revisions.MZ_HEAD, 0x4d5a, Revisions.MZ_MAX);
-
-    private readonly int head;
-    private readonly short id;
-    private readonly short revision;
-
-    Branch(int head, int id, int revision)
+    public class BranchDetails
     {
-        this.head = head;
-        this.id = (short) id;
-        this.revision = (short) revision;
-    }
+        private readonly int head;
+        private readonly short id;
+        private readonly short revision;
 
-    public int getHead()
-    {
-        return this.head;
+        public BranchDetails(int head, short id, short revision)
+        {
+            this.head = head;
+            this.id = id;
+            this.revision = revision;
+        }
     }
-
-    public short getID()
+    public static class Branch
     {
-        return this.id;
+        public static readonly BranchDetails NONE = new BranchDetails(0x0, 0x0, 0x0);
+        public static readonly BranchDetails LEERDAMMER = new BranchDetails(Revisions.LD_HEAD, 0x4c44, Revisions.LD_MAX);
     }
-
-    public short getRevision()
-    {
-        return this.revision;
-    }
-
-    public static Branch fromID(short ID)
-    {
-        for (Branch branch : Branch.values())
-            if (branch.getID() == ID) return branch;
-        return null;
-    }
-}
 }
